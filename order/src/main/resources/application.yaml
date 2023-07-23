@@ -1,0 +1,12 @@
+server:
+  port: 9992
+spring:
+  application:
+    name: order-service2
+  cloud:
+    nacos:
+      server-addr: 192.168.175.1:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: public
