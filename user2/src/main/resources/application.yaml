@@ -1,8 +1,13 @@
 server:
   port: 9981
+management:
+  endpoint:
+    web:
+      exposure:
+        include: "*"
 spring:
   application:
-    name: user-service
+    name: userService2
   cloud:
     nacos:
       discovery:

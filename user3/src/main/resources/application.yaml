@@ -1,5 +1,5 @@
 server:
-  port: 9982
+  port: 9983
 management:
   endpoint:
     web:
@@ -7,7 +7,8 @@ management:
         include: "*"
 spring:
   application:
-    name: userService
+    name: userService3
+
   cloud:
     nacos:
       discovery:

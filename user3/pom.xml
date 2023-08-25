@@ -9,13 +9,21 @@
         <version>1.0.0-SNAPSHOT</version>
         <relativePath/>
     </parent>
-
-    <artifactId>user-naocs</artifactId>
+    <artifactId>user3</artifactId>
 <dependencies>
     <!--        nacos服务     -->
     <dependency>
         <groupId>com.alibaba.cloud</groupId>
         <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+    </dependency>
+    <!--        openFeign     -->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-openfeign</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-loadbalancer</artifactId>
     </dependency>
 </dependencies>
 
