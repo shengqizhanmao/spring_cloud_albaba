@@ -3,6 +3,7 @@ package com.lin.usernacos.api;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.lin.common.Result;
 import com.lin.common.pojo.User;
+import com.lin.common.utils.IpUtils;
 import com.lin.usernacos.client.UserClient;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,5 +39,17 @@ public class UserApi {
         System.out.println("调用了远程服务结束，其返回结果：" + result);
         return result;
     }
+    @GetMapping("/get2")
+    public Result get2() {
+        String ipAddr = IpUtils.getIpAddr();
+        User user = new User();
+        user.setAge(20);
+        user.setName("linShengwei");
+        user.setSex("女");
+        System.out.println("ip:"+ipAddr+",调用了本服务，本端口：" + port + "，返回结果：" + user);
+        return new Result("user", user);
+    }
+
+
 
 }
