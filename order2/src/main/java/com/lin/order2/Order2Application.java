@@ -9,9 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date ${DATE}
  */
 @SpringBootApplication
-public class OrdernacosApplication {
+public class Order2Application {
     public static void main(String[] args) {
-        SpringApplication.run(OrdernacosApplication.class, args);
+        SpringApplication.run(Order2Application.class, args);
     }
 
 }

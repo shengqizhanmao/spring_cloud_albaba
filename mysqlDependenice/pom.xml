@@ -8,13 +8,13 @@
         <artifactId>spring_cloud_albaba</artifactId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
-    <artifactId>order-nacos</artifactId>
-    <dependencies>
-        <!--        nacos服务     -->
-        <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
-        </dependency>
-    </dependencies>
+
+    <artifactId>mysqlDependenice</artifactId>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
 </project>
