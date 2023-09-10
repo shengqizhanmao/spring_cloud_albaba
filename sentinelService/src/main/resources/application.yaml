@@ -1,0 +1,56 @@
+server:
+  port: 10013
+spring:
+  profiles:
+    active: dev
+  application:
+    name: sentinel-service
+  cloud:
+#    bootstrap:
+#      enable: true
+    nacos:
+      discovery:
+        server-addr: 192.168.175.1:8848
+        username: nacos
+        password: nacos
+        namespace: public
+        config:
+          server-addr: 192.168.175.1:8848
+          username: nacos
+          password: nacos
+          file-extension: yaml
+          group: DEFAULT_GROUP
+          namespace: public
+          prefix: sentinel-service
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 192.168.175.1:10003
+      web-context-unify: false
+      eager: true
+      datasource:
+        flow:
+          nacos:
+            server-addr: 192.168.43.1:8848
+            namespace: public
+            dataId: ${spring.application.name}-flow-rules
+            groupId: SENTINEL_GROUP
+            data-type: json
+            rule-type: flow
+            username: nacos
+            password: nacos
+
+#        ds1:
+#          nacos:
+#            server-addr: 192.168.175.1:8848
+#            namespace: public
+#            dataId: ${spring.application.name}-flow-rules
+#            groupId: SENTINEL_GROUP
+#            data-type: json
+#            rule-type: flow
+#            username: nacos
+#            password: nacos
+feign:
+  sentinel:
+    enabled: true
+#age: "1113"

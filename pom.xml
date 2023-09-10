@@ -17,10 +17,11 @@
     <modules>
         <module>user</module>
         <module>order</module>
-        <module>order-nacos</module>
+        <module>order2</module>
         <module>user2</module>
-        <module>user3</module>
-<!--        <module>Gateway</module>-->
+        <module>user2</module>
+        <module>sentinelService</module>
+        <!--        <module>Gateway</module>-->
     </modules>
     <properties>
         <java.version>1.8</java.version>

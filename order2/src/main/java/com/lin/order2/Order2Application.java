@@ -1,4 +1,4 @@
-package com.lin.ordernacos;
+package com.lin.order2;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -11,6 +11,12 @@
     <version>1.0.0-SNAPSHOT</version>
     <name>user</name>
     <description>用户服务</description>
+    <properties>
+        <mysql.version>5.1.43</mysql.version>
+        <mybatis-plus.version>3.2.0</mybatis-plus.version>
+        <mybatis-plus-generator.version>3.5.2</mybatis-plus-generator.version>
+        <mybatis-plus-extension.version>3.5.2</mybatis-plus-extension.version>
+    </properties>
     <dependencies>
         <!--        nacos服务     -->
         <dependency>
@@ -26,5 +32,34 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-loadbalancer</artifactId>
         </dependency>
+        <!--        mysql   和mybatis  -->
+        <dependency>
+            <groupId>com.lin</groupId>
+            <artifactId>mysqlDependenice</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <testFailureIgnore>true</testFailureIgnore>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
 </project>

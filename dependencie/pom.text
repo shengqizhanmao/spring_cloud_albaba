@@ -16,6 +16,31 @@
                 <artifactId>spring-cloud-starter-openfeign</artifactId>
                 <version>3.0.0</version>
             </dependency>
+            <!--        openfeign需要loadbalancer     -->
+             <dependency>
+                 <groupId>org.springframework.cloud</groupId>
+                 <artifactId>spring-cloud-loadbalancer</artifactId>
+             </dependency>
+            <!--        gateway服务     -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>3.1.1</version>
+            </dependency>
+            <!--        gateway需要bootstrap服务     -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-bootstrap</artifactId>
+                <version>3.1.1</version>
+            </dependency>
+
+
+
+
+
+
+
+
 
 
         <dependency>

@@ -1,12 +1,27 @@
 server:
-  port: 9992
+  port: 9991
+  management:
+    endpoint:
+      web:
+        exposure:
+          include: "*"
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud_order?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    hikari:
+      max-lifetime: 50000
   application:
-    name: order-service2
+    name: orderService
   cloud:
     nacos:
-      server-addr: 192.168.175.1:8848
-      username: nacos
-      password: nacos
       discovery:
+        server-addr: 192.168.175.1:8848
+        username: nacos
+        password: nacos
         namespace: public

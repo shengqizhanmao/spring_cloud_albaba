@@ -1,11 +1,21 @@
 server:
-  port: 9982
+  port: 9981
 management:
   endpoint:
     web:
       exposure:
         include: "*"
 spring:
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cloud_user?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    hikari:
+      max-lifetime: 50000
   application:
     name: userService
   cloud:
@@ -14,4 +24,4 @@ spring:
         server-addr: 192.168.175.1:8848
         username: nacos
         password: nacos
-        namespace: cd9d1484-80a0-4f98-b3f3-3d3347d04214
+        namespace: public

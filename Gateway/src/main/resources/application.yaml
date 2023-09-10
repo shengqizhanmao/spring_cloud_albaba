@@ -1,5 +1,5 @@
 server:
-  port: 10001
+  port: 10002
 spring:
   application:
     name: GatewayService
@@ -9,17 +9,31 @@ spring:
         server-addr: 192.168.175.1:8848
         username: nacos
         password: nacos
-        namespace: cd9d1484-80a0-4f98-b3f3-3d3347d04214
+        namespace: public
     gateway:
       discovery:
         locator:
           enabled: true
       routes:
+#        - id: userService
+#          uri: http://localhost:9981
+#          predicates:
+#            - Path=/user/**
         - id: userService
-          uri: http://localhost:9982
+#          uri: http://localhost:9982
+          uri: lb://userService
           predicates:
             - Path=/user/**
-        - id: userService2
-          uri: http://localhost:9981
+        - id: orderService
+          uri: http://localhost:9991
           predicates:
-            - Path=/user/**
+            - Path=/order/**
+        - id: orderService
+          uri: http://localhost:9992
+          predicates:
+            - Path=/order/**
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: 127.0.0.1:10003
+      web-context-unify: false

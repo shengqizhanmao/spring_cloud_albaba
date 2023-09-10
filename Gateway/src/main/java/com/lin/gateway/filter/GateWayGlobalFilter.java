@@ -1,5 +1,6 @@
 package com.lin.gateway.filter;
 
+import org.apache.http.client.utils.DateUtils;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -17,17 +18,23 @@ import java.util.Date;
  */
 @Component
 public class GateWayGlobalFilter implements GlobalFilter, Ordered {
+
+
+
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         System.out.println("=============================================");
-        System.out.println("网关时间："+new Date());
+        String date = DateUtils.formatDate(new Date(), "yyyy-MM-dd hh:mm:ss");
+        System.out.println("网关时间："+date);
 //        String username = exchange.getRequest().getQueryParams().getFirst("username");
 //        if(username==null){
 //            System.out.println("用户名为null，非法用户！！！");
 //            exchange.getResponse().setStatusCode(HttpStatus.NOT_ACCEPTABLE);
 //            return exchange.getResponse().setComplete();
 //        }
+
         ServerHttpRequest request = exchange.getRequest();
+        System.out.println("请求地址："+request.getPath());
         System.out.println("请求地址："+request.getURI());
         System.out.println("请求方式："+request.getMethod());
         System.out.println("请求参数："+request.getQueryParams());
