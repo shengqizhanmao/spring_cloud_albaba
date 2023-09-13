@@ -15,4 +15,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/order-detail")
 public class OrderDetailController {
 
+
 }

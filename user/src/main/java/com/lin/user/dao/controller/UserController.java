@@ -5,6 +5,7 @@ import com.lin.common.pojo.User;
 import com.lin.common.utils.IpUtils;
 import com.lin.user.dao.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,6 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/user")
+@RefreshScope
 public class UserController {
 
 
@@ -23,6 +25,14 @@ public class UserController {
 
     @Value("${server.port}")
     private int port;
+
+    @Value("${user}")
+    private String user;
+
+    @GetMapping("/test")
+    public String test() {
+        return user;
+    }
 
     @GetMapping("/getPort")
     public String getPort() {

@@ -17,7 +17,7 @@ spring:
     hikari:
       max-lifetime: 50000
   application:
-    name: orderService
+    name: order-service
   cloud:
     nacos:
       discovery:

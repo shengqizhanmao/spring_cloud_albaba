@@ -2,7 +2,7 @@ server:
   port: 10002
 spring:
   application:
-    name: GatewayService
+    name: Gateway-service
   cloud:
     nacos:
       discovery:
@@ -15,20 +15,15 @@ spring:
         locator:
           enabled: true
       routes:
-#        - id: userService
-#          uri: http://localhost:9981
-#          predicates:
-#            - Path=/user/**
-        - id: userService
-#          uri: http://localhost:9982
-          uri: lb://userService
+        - id: user-service
+          uri: lb://user-service
           predicates:
             - Path=/user/**
-        - id: orderService
+        - id: order-service
           uri: http://localhost:9991
           predicates:
             - Path=/order/**
-        - id: orderService
+        - id: order-service
           uri: http://localhost:9992
           predicates:
             - Path=/order/**

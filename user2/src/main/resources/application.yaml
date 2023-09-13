@@ -17,7 +17,7 @@ spring:
     hikari:
       max-lifetime: 50000
   application:
-    name: userService
+    name: user-service
   cloud:
     nacos:
       discovery:
